@@ -40,6 +40,9 @@ class Main {
       uTexResolution: {
         value: new THREE.Vector2(2048, 256)
       },
+      uScrollProgress: {
+        value: 0.0
+      }
     };
 
     this.clock = new THREE.Clock();
@@ -164,6 +167,8 @@ class Main {
           const progress = self.progress;
 
           if(progress > 0.96) return;
+
+          this.uniforms.uScrollProgress.value = progress;
           
           // this.percentage = progress;
           this.targetPercentage = progress;
