@@ -170,6 +170,18 @@ class Main {
         }
       }
     });
+
+    const tlMouse = gsap.timeline({
+      scrollTrigger: {
+        trigger: '#section01',
+        start: 'top top-=100',
+        // markers: true,
+      }
+    })
+    tlMouse.to('.mouse', {
+      opacity: 0,
+      duration: 0.6,
+    })
   }
 
   _updateCamera() {

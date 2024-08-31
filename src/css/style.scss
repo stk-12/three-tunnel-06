@@ -37,3 +37,46 @@ canvas {
     min-height: 4000vh;
   }
 }
+
+.mouse {
+  width: 40px;
+  height: 65px;
+  border-radius: 25px;
+  border: 3px solid #888;
+  position: fixed;
+  bottom: 20px;
+  // left: calc(50% - 20px);
+  right: 20px;
+  &::before,
+  &::after {
+    content: "";
+    display: block;
+		position: absolute;
+    width: 6px;
+		height: 6px;
+		border-radius: 50%;
+		top: 10px;
+		left: calc(50% - 3px);
+		background: #888;
+		opacity: 0;
+		animation: ball 1.2s ease-in-out infinite;
+  }
+  &::after {
+    animation-delay: .6s;
+  }
+}
+
+@keyframes ball {
+  50% {
+    opacity: 1;
+  }
+  47% {
+    transform: translateY(10px);
+  }
+  52% {
+    transform: translateY(10px);
+  }
+  100% {
+    transform: translateY(20px);
+  }
+}
